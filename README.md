@@ -1,5 +1,7 @@
 # DevicePulseDashboard
 
+![DevicePulse Dashboard Screenshot](dashboard.jpg)
+
 DevicePulseDashboard is a real-time device monitoring dashboard built with Angular. It visualizes live telemetry and event data from IoT devices using a modern, responsive UI.
 
 ## Real-Time Architecture
