@@ -1,59 +1,30 @@
 # DevicePulseDashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+DevicePulseDashboard is a real-time device monitoring dashboard built with Angular. It visualizes live telemetry and event data from IoT devices using a modern, responsive UI.
 
-## Development server
+## Real-Time Architecture
 
-To start a local development server, run:
+The app receives live data using a .NET Core SignalR backend. Device telemetry and events are streamed from Azure IoT Hub to a .NET Core server, which then pushes updates to this Angular dashboard via SignalR WebSockets.
 
-```bash
-ng serve
-```
+**Data Flow:**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. IoT devices send telemetry and event data to Azure IoT Hub.
+2. A .NET Core backend service connects to Azure IoT Hub and processes incoming messages.
+3. The backend uses SignalR to broadcast live updates to all connected dashboard clients.
+4. The Angular app subscribes to SignalR events and updates charts, metrics, and device status in real time.
 
-## Code scaffolding
+**Tech Stack:**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Angular (standalone components)
+- .NET Core SignalR (WebSocket server)
+- Azure IoT Hub (device connectivity)
+- Chart.js (data visualization)
+- Bootstrap (UI layout)
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more on Angular CLI, see the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).
+
+For .NET Core SignalR, see the [SignalR documentation](https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction).
+
+For Azure IoT, see the [Azure IoT Hub documentation](https://learn.microsoft.com/en-us/azure/iot-hub/).

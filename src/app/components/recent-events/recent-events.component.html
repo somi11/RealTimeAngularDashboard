@@ -1,0 +1,19 @@
+<div class="card" style="height: 32vh; min-height: 460px; overflow-y: auto;">
+  <div class="card-body">
+    <h5 class="card-title">Recent Events</h5>
+    <div *ngFor="let event of recentEvents" class="event-row">
+      <span>
+        <i [class]="getEventIcon(event.eventType)" class="event-icon"></i>
+        {{ event.description }}
+        <small class="device-tag">Device {{ event.deviceId }}</small>
+      </span>
+      <div class="event-time">
+        <span class="time">{{ formatTime(event.occurredAt) }}</span>
+      </div>
+    </div>
+    <div *ngIf="recentEvents.length === 0" class="no-events">
+      <i class="fas fa-check-circle text-success"></i>
+      No recent events
+    </div>
+  </div>
+</div>

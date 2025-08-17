@@ -1,0 +1,47 @@
+<div class="card" style="height: 32vh; min-height: 460px; overflow-y: auto;">
+  <div class="card-body">
+    <div class="card-body">
+      <div class="row text-center">
+        <div class="col-4">
+          <div class="metric-circle devices-circle">
+            {{ metrics.telemetryCount }}
+          </div>
+          <div class="metric-label">Total Telemetry</div>
+          <div class="metric-sublabel">
+            {{ metrics.activeDevices }} Active
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="metric-circle events-circle">
+            {{ metrics.totalEvents }}
+          </div>
+          <div class="metric-label">Events</div>
+          <div class="metric-sublabel">Live</div>
+        </div>
+        <div class="col-4">
+          <div class="metric-circle battery-circle" [style.background]="getBatteryGradient(batteryLevel)">
+            {{ batteryLevel }}
+          </div>
+          <div class="metric-label">Battery</div>
+          <div class="metric-sublabel">Live %</div>
+        </div>
+      </div>
+
+      <!-- Real-time status indicators -->
+      <div class="status-indicators mt-4">
+        <div class="status-row">
+          <span class="status-label">System Status:</span>
+          <span [class]="getSystemStatusClass()">{{ getSystemStatus() }}</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Last Update:</span>
+          <span class="status-value">{{ lastUpdate | date : 'short' }}</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Data Rate:</span>
+          <span class="status-value">{{ dataRate }}/min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.device-item {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.device-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.device-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.battery-indicator {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.text-success {
+  color: #50e3c2 !important;
+  font-weight: bold;
+  text-shadow: 0 0 2px #1e3c72, 0 0 4px #2a5298;
+}
+.status-inactive {
+  background-color: #6c757d;
+}
+.status-warning {
+  background-color: #ffc107;
+}

@@ -1,0 +1,35 @@
+.metric-sublabel {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+.status-indicators {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.status-label {
+  opacity: 0.8;
+}
+
+.status-value {
+  font-weight: 500;
+}
+
+.status-good {
+  color: #28a745;
+}
+.status-warning {
+  color: #ffc107;
+}
+.status-critical {
+  color: #dc3545;
+}

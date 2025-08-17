@@ -1,0 +1,29 @@
+<div class="container-fluid dashboard-container">
+  <h1 class="dashboard-title">Device Pulse Live Dashboard</h1>
+
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-3 col-md-6 d-flex flex-column" style="height: 100%;">
+      <div class="flex-fill">
+        <app-device-list></app-device-list>
+      </div>
+      <div class="flex-fill">
+        <app-recent-events></app-recent-events>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-9 col-md-6">
+      <app-telemetry-chart></app-telemetry-chart>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <app-events-chart></app-events-chart>
+        </div>
+        <div class="col-lg-6">
+          <app-metrics></app-metrics>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

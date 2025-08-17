@@ -1,0 +1,42 @@
+<div class="card" style="height: 32vh; min-height: 440px; overflow-y: auto;">
+
+  <div class="card-body text-white">
+    <h5 class="card-title">📡Live Status</h5>
+
+    <div *ngIf="deviceStatus" class="device-item">
+      <i class="fas fa-microchip me-2"></i>
+      <strong>{{ deviceStatus.deviceName }}</strong>
+
+
+      <div class="device-status mt-2">
+        <span class="battery-indicator">
+          🔋 {{ deviceStatus.batteryLevel }}%
+          <span *ngIf="deviceStatus.isCharging">⚡ Charging</span>
+        </span>
+        <span class="status-dot ms-2" [ngClass]="'status-' + statusDot"></span>
+      </div>
+
+      <hr />
+
+      <div class="mt-2">
+        <p><strong>⏱ Last Seen:</strong> {{ deviceStatus.lastSeen | date:'short' }}</p>
+        <p><strong>📍 Location:</strong> {{ deviceStatus.location }}</p>
+        <p><strong>📶 Status:</strong> {{ deviceStatus.status }}</p>
+        <p><strong>🚶 Movement:</strong> {{ deviceStatus.isMoving ? 'Yes' : 'No' }}</p>
+        <p><strong>⚠️ Fall Detected:</strong>
+          <span [ngClass]="deviceStatus.fallDetected ? 'text-danger' : 'text-success'">
+            {{ deviceStatus.fallDetected ? 'Yes' : 'No' }}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div *ngIf="!deviceStatus" class="d-flex flex-column align-items-center justify-content-center"
+      style="height: 50%;">
+      <div class="spinner-border text-primary mb-2" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <span class="text-muted">Waiting for device status...</span>
+    </div>
+  </div>
+</div>

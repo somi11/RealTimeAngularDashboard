@@ -1,0 +1,19 @@
+<div class="card" style="height: 32vh; min-height: 440px; overflow-y: auto;">
+  <div class="card-body">
+    <h5 class="card-title">
+      Telemetry Data - Device Mi 11T Pro
+    </h5>
+
+    <div class="chart-container position-relative">
+      <canvas #telemetryChart></canvas>
+      <div
+        class="d-flex flex-column align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100"
+        *ngIf="loading">
+        <div class="spinner-border text-primary mb-2" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <span class="text-muted">Loading telemetry data...</span>
+      </div>
+    </div>
+  </div>
+</div>
